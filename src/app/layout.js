@@ -5,10 +5,10 @@ const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 import { ThemeProvider } from "@/context/MyContext";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
-export const metadata = {
-  title: "BlogBreeze",
-  description: "BlogBreeze",
-};
+// export const metadata = {
+//   title: "BlogBreeze",
+//   description: "BlogBreeze",
+// };
 
 export default function RootLayout({ children }) {
   return (

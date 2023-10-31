@@ -4,10 +4,10 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@/components/button/Button";
 import { useForm, ValidationError } from "@formspree/react";
-export const metadata = {
-  title: "Contact us",
-  description: "Contact us description",
-};
+// export const metadata = {
+//   title: "Contact us",
+//   description: "Contact us description",
+// };
 const Contact = () => {
   const [state, handleSubmit] = useForm("xknlewgq");
 
