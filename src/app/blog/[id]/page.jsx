@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Head from "next/head";
 export async function generateMetadata({ params }) {
   const post = await getData(params.id);
   return {
@@ -11,7 +10,7 @@ export async function generateMetadata({ params }) {
   };
 }
 const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/posts/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {

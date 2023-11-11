@@ -7,10 +7,13 @@ import Image from "next/image";
 const Blog = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/posts", {
-      cache: "no-store",
-      method: "GET",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/posts`,
+      {
+        cache: "no-store",
+        method: "GET",
+      }
+    );
     if (!res.ok) {
       return "Error occured";
     }
@@ -19,7 +22,9 @@ const Blog = () => {
   };
 
   const postData = async () => {
-    await fetch("http://localhost:3000/api/posts", { method: "POST" })
+    await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/posts`, {
+      method: "POST",
+    })
       .then((data) => {
         console.log("data" + data);
       })
