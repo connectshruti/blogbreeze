@@ -9,7 +9,7 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),     
+    }),
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
@@ -37,6 +37,7 @@ const handler = NextAuth({
       },
     }),
   ],
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
   pages: {
     error: "/dashboard/login",
   },
