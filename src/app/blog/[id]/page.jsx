@@ -10,9 +10,12 @@ export async function generateMetadata({ params }) {
   };
 }
 const getData = async (id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/posts/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/posts/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!res.ok) {
     return notFound();
   }

@@ -36,28 +36,32 @@ const Blog = () => {
 
   return (
     <div className={styles.maincontainer}>
-      {data.map((item) => {
-        return (
-          <Link
-            href={`/blog/${item._id}`}
-            key={item._id}
-            className={styles.container}
-          >
-            <div className={styles.imageContainer}>
-              <Image
-                src={item.img}
-                alt={item.title}
-                fill={true}
-                className={styles.image}
-              />
-            </div>
-            <div className={styles.content}>
-              <h1 className={styles.title}>{item.title}</h1>
-              <p className={styles.desc}>{item.desc}</p>
-            </div>
-          </Link>
-        );
-      })}
+      {data && (
+        <>
+          {data.map((item) => {
+            return (
+              <Link
+                href={`/blog/${item._id}`}
+                key={item._id}
+                className={styles.container}
+              >
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill={true}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.content}>
+                  <h1 className={styles.title}>{item.title}</h1>
+                  <p className={styles.desc}>{item.desc}</p>
+                </div>
+              </Link>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };
